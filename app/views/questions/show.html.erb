@@ -1,0 +1,9 @@
+<%= form_with url: answer_questions_path(id: @current_question_number), method: :post do |f| %>
+  <p><%= @question.content %></p>
+  <% @choices.each do |choice| %>
+    <button type="submit" class="btn btn-outline-info" name="answer" value="<%= choice %>">
+      <%= choice %>
+    </button>
+  <% end %>
+<% end %>
+
