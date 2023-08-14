@@ -1,10 +1,11 @@
 class QuestionsController < ApplicationController
+  
   def index
     session[:question_ids] = Question.pluck(:id).first(5)
     puts "Question IDs: #{session[:question_ids].inspect}" # デバッグ用の出力
     redirect_to question_path(id: session[:question_ids].first)
   end
-
+  
   def show
     @question = Question.find(params[:id])
     @current_question_number = session[:question_ids].index(params[:id].to_i) + 1
@@ -29,4 +30,5 @@ class QuestionsController < ApplicationController
   end
 
   def result; end
+
 end
