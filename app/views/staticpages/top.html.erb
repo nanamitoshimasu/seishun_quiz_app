@@ -7,7 +7,7 @@
       <p>全問正解目指してガンバッテクダサイ！</p>
       <p>3択なので安心してください！</p>
 
-      <%= form_with url: questions_path(Question.first), method: :get do |f| %>
+      <%= form_with url: questions_path, method: :get do |f| %>
         <%= f.button type: "submit", class: "btn btn-primary" do %>
          はじめる 
         <% end %>
